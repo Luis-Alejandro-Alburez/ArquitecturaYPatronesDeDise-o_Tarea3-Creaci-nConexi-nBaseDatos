@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:15
+    container_name: my_db_galileo
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: galileo0_2025
+      POSTGRES_DB: bdd_galileo
+    ports:
+      - "54321:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
